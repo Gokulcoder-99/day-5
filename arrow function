@@ -1,0 +1,43 @@
+1.Print odd numbers in an array:
+((arr)=> {
+  var result = arr.filter(function(num) {
+    return num % 2 !== 0;
+  });
+  console.log(result);
+})([1, 2, 3, 4, 5]);
+---------------------------------------
+2.Convert all the strings to title caps in a string array:
+((arr)=> {
+  var result = arr.map(function(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
+  console.log(result);
+})(['hello', 'world']);
+--------------------------------------
+3.Sum of all numbers in an array:
+((arr)=> {
+  var result = arr.reduce(function(sum, num) {
+    return sum + num;
+  }, 0);
+  console.log(result);
+})([1, 2, 3, 4]);
+-----------------------------------------
+4.Return all the prime numbers in an array:
+((arr)=> {
+  var result = arr.filter(function(num) {
+    if (num <= 1) return false;
+    for (var i = 2; i < num; i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  });
+  console.log(result);
+})([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+-----------------------------------
+5.Return all the palindromes in an array:
+((arr)=> {
+  var result = arr.filter(function(str) {
+    return str === str.split('').reverse().join('');
+  });
+  console.log(result);
+})(['level', 'hello', 'world', 'madam']);
